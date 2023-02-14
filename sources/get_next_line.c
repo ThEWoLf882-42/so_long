@@ -6,11 +6,11 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:23:43 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/14 13:42:12 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/14 17:00:01 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
 char	*kra(int fd, char *naah)
 {

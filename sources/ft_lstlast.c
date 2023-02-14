@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 13:42:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/14 13:53:56 by agimi            ###   ########.fr       */
+/*   Created: 2023/02/14 13:41:51 by agimi             #+#    #+#             */
+/*   Updated: 2023/02/14 16:59:54 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
-int	ft_lstsize(t_map *lst)
+t_map	*ft_lstlast(t_map *lst)
 {
-	int	size;
-
-	size = 0;
-	while (lst)
-	{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
 		lst = lst->next;
-		size++;
-	}
-	return (size);
+	return (lst);
 }

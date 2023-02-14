@@ -4,12 +4,8 @@ NAME_B = so_long_bonus
 CC = cc
 FLAGS = -Wall -Werror -Wextra -O3
 ARGS = -Iinclude -lglfw -L"/goinfre/agimi/.brew/Cellar/glfw/3.3.8/lib"
-LIBRARIES = -L$(MLX42_DIRECTORY) -L$(LIBFT_DIRECTORY)
-INCLUDES = -I$(HEADERS_DIRECTORY) -I$(MLX42_HEADERS) -I$(LIBFT_HEADERS)
-
-LIBFT = $(LIBFT_DIRECTORY)libft.a
-LIBFT_DIRECTORY = ./libft/
-LIBFT_HEADERS = $(LIBFT_DIRECTORY)includes/
+LIBRARIES = -L$(MLX42_DIRECTORY)
+INCLUDES = -I$(HEADERS_DIRECTORY) -I$(MLX42_HEADERS)
 
 MLX42 = $(MLX42_DIRECTORY)/build/libmlx42.a
 MLX42_DIRECTORY = ../MLX42/
@@ -22,6 +18,12 @@ HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 SOURCES_DIRECTORY = ./sources/
 SOURCES_DIRECTORY_B = ./sources/
 SOURCES_LIST =	down.c \
+				ft_lstadd_back.c \
+				ft_lstlast.c \
+				ft_lstnew.c \
+				ft_lstsize.c \
+				get_next_line_utils.c \
+				get_next_line.c \
 				hook.c \
 				left.c \
 				load_png.c \
@@ -60,13 +62,13 @@ all: $(NAME)
 
 bonus: $(NAME_B)
 
-$(NAME): $(LIBFT) $(OBJECTS_DIRECTORY) $(OBJECTS) $(OBJECTS_M)
-	@$(CC) $(FLAGS) $(LIBRARIES) $(INCLUDES) $(LIBFT) $(MLX42) $(OBJECTS) $(OBJECTS_M) $(ARGS) -o $(NAME)
+$(NAME): $(OBJECTS_DIRECTORY) $(OBJECTS) $(OBJECTS_M)
+	@$(CC) $(FLAGS) $(LIBRARIES) $(INCLUDES) $(MLX42) $(OBJECTS) $(OBJECTS_M) $(ARGS) -o $(NAME)
 	@echo "\n$(NAME): $(GREEN)$(NAME) object files were created$(RESET)"
 	@echo "$(NAME): $(GREEN)$(NAME) was created$(RESET)"
 
-$(NAME_B): $(LIBFT) $(OBJECTS_DIRECTORY) $(OBJECTS) $(OBJECTS_B)
-	@$(CC) $(FLAGS) $(LIBRARIES) $(INCLUDES) $(LIBFT) $(MLX42) $(OBJECTS) $(OBJECTS_B) $(ARGS) -o $(NAME)
+$(NAME_B): $(OBJECTS_DIRECTORY) $(OBJECTS) $(OBJECTS_B)
+	@$(CC) $(FLAGS) $(LIBRARIES) $(INCLUDES) $(MLX42) $(OBJECTS) $(OBJECTS_B) $(ARGS) -o $(NAME)
 	@echo "\n$(NAME): $(GREEN)$(NAME_B) object files were created$(RESET)"
 	@echo "$(NAME): $(GREEN)$(NAME_B) was created$(RESET)"
 
@@ -78,19 +80,12 @@ $(OBJECTS_DIRECTORY)%.o : $(SOURCES_DIRECTORY)%.c $(HEADERS)
 	@$(CC) $(FLAGS) -c $(INCLUDES) $< -o $@
 	@echo "$(GREEN).$(RESET)\c"
 
-$(LIBFT):
-	@echo "$(NAME): $(GREEN)creating $(LIBFT)...$(RESET)"
-	@$(MAKE) -sC $(LIBFT_DIRECTORY)
-
 clean:
-	@$(MAKE) -sC $(LIBFT_DIRECTORY) clean
 	@rm -rf $(OBJECTS_DIRECTORY)
 	@echo "$(NAME): $(RED)$(OBJECTS_DIRECTORY) was deleted$(RESET)"
 	@echo "$(NAME): $(RED)object files were deleted$(RESET)"
 
 fclean: clean
-	@rm -f $(MLX42)
-	@echo "$(NAME): $(RED)$(MLX42) was deleted$(RESET)"
 	@rm -f $(NAME)
 	@echo "$(NAME): $(RED)$(NAME) was deleted$(RESET)"
 	@rm -f $(NAME_B)

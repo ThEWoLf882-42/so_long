@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 13:41:46 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/14 15:55:44 by agimi            ###   ########.fr       */
+/*   Created: 2023/02/14 13:41:56 by agimi             #+#    #+#             */
+/*   Updated: 2023/02/14 17:19:36 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
-void	ft_lstadd_back(t_map *a, t_map *new)
+t_map	*ft_lstnew(char *s)
 {
-	if (!a || !new)
-		return ;
-	if (a)
-		ft_lstlast(a)->next = new;
-	else
-		a = new;
+	t_map	*new;
+
+	new = malloc(sizeof(t_map));
+	if (!new)
+		return (NULL);
+	new->s = s;
+	new->next = NULL;
+	return (new);
 }

@@ -6,21 +6,21 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:21:28 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/14 13:42:10 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/14 17:34:49 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
 size_t	ft_strlen(char *s)
 {
 	size_t	i;
 
-	i = 0;
+	i = -1;
 	if (!s)
 		return (0);
-	while (s[i] != '\0')
-		i++;
+	while (s[++i])
+		;
 	return (i);
 }
 

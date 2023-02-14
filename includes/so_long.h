@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/14 13:52:33 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/14 17:40:59 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
 # include <memory.h>
 # include <fcntl.h>
-# include "libft.h"
 # include "MLX42/MLX42.h"
 # define WIDTH 1920
 # define HEIGHT 1080
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 69
+# endif
 
 typedef struct up
 {
@@ -61,7 +64,8 @@ typedef struct moves
 typedef struct grass
 {
 	mlx_image_t		*grass;
-	mlx_texture_t	*gras;
+	mlx_texture_t	*gras1;
+	mlx_texture_t	*gras2;
 }	t_grass;
 
 typedef struct coin
@@ -77,6 +81,12 @@ typedef struct my_mlx
 	mlx_t			*mlx;
 	mlx_image_t		*player;
 }	t_my_mlx;
+
+typedef struct map
+{
+	char		*s;
+	struct map	*next;
+}	t_map;
 
 typedef struct all
 {
@@ -102,5 +112,15 @@ void	set_frame(t_all *all, int set);
 void	set_grass(t_all *all);
 void	set_coin(t_all *all);
 void	map(t_all *all, char **av);
+size_t	ft_strlen(char *s);
+char	*ft_strchr(char *s, int c);
+char	*ft_strjoin(char *naah, char *buff);
+char	*thisone(char *naah);
+char	*notthisone(char *naah);
+char	*get_next_line(int fd);
+t_map	*ft_lstnew(char *s);
+t_map	*ft_lstlast(t_map *lst);
+int		ft_lstsize(t_map *lst);
+void	ft_lstadd_back(t_map *a, t_map *new);
 
 #endif
