@@ -1,0 +1,7 @@
+.DS_Store
+.vscode
+so_long
+*.o
+*.lib
+*.a
+*.out
