@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:10:24 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/14 17:34:15 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/14 18:11:47 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,4 @@ void	map(t_all *all, char **av)
 	}
 	all->map = m;
 	all->mpy = ft_lstsize(all->map) - 1;
-	printf("x = %d y = %d\n", all->mpx, all->mpy);
-	while (all->map->next)
-	{
-		printf("row = %s", all->map->next->s);
-		all->map = all->map->next;
-	}
 }

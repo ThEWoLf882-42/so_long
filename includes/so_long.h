@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/14 17:40:59 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/14 19:52:09 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ typedef struct grass
 {
 	mlx_image_t		*grass;
 	mlx_texture_t	*gras1;
-	mlx_texture_t	*gras2;
 }	t_grass;
 
 typedef struct coin
@@ -75,6 +74,19 @@ typedef struct coin
 	int				cn;
 	int				cc;
 }	t_collect;
+
+typedef struct wall
+{
+	mlx_texture_t	*ruc;
+	mlx_texture_t	*luc;
+	mlx_texture_t	*rdc;
+	mlx_texture_t	*ldc;
+	mlx_texture_t	*mu;
+	mlx_texture_t	*mr;
+	mlx_texture_t	*ml;
+	mlx_texture_t	*md;
+	mlx_image_t		*wall;
+}	t_wall;
 
 typedef struct my_mlx
 {
@@ -100,17 +112,20 @@ typedef struct all
 	t_collect	coin;
 	t_grass		grass;
 	t_map		*map;
+	t_wall		wall;
 }	t_all;
 
 void	lloop(t_all *all);
 void	rloop(t_all *all);
 void	uloop(t_all *all);
 void	dloop(t_all *all);
-void	load_png(t_all	*all);
+void	load_p_png(t_all *all);
+void	load_w_png(t_all *all);
 void	hook(void *gg);
 void	set_frame(t_all *all, int set);
 void	set_grass(t_all *all);
 void	set_coin(t_all *all);
+void	set_wall(t_all *all);
 void	map(t_all *all, char **av);
 size_t	ft_strlen(char *s);
 char	*ft_strchr(char *s, int c);

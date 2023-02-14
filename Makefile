@@ -26,12 +26,14 @@ SOURCES_LIST =	down.c \
 				get_next_line.c \
 				hook.c \
 				left.c \
-				load_png.c \
+				load_p_png.c \
+				load_w_png.c \
 				map.c \
 				right.c \
 				set_coin.c \
 				set_frame.c \
 				set_grass.c \
+				set_wall.c \
 				up.c \
 
 SOURCES_LIST_M =	so_long.c

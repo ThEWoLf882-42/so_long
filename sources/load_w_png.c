@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_grass.c                                        :+:      :+:    :+:   */
+/*   load_w_png.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 18:49:48 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/14 18:50:49 by agimi            ###   ########.fr       */
+/*   Created: 2023/02/13 16:40:36 by agimi             #+#    #+#             */
+/*   Updated: 2023/02/14 19:05:28 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	set_grass(t_all *all)
+void	load_w_png(t_all *all)
 {
-	int	x;
-	int	y;
-
-	x = 0;
-	all->grass.gras1 = mlx_load_png("./img/G.png");
-	all->grass.grass = mlx_texture_to_image(all->my.mlx, all->grass.gras1);
-	while (x < all->mpx * 69)
-	{
-		y = 0;
-		while (y < all->mpy * 69)
-		{
-			mlx_image_to_window(all->my.mlx, all->grass.grass, x, y);
-			y += 69;
-		}
-		x += 69;
-	}
+	all->wall.ruc = mlx_load_png("./img/W3.png");
+	all->wall.luc = mlx_load_png("./img/W7.png");
+	all->wall.rdc = mlx_load_png("./img/W4.png");
+	all->wall.ldc = mlx_load_png("./img/W8.png");
+	all->wall.mu = mlx_load_png("./img/W5.png");
+	all->wall.mr = mlx_load_png("./img/W13.png");
+	all->wall.ml = mlx_load_png("./img/W1.png");
+	all->wall.md = mlx_load_png("./img/W6.png");
 }
