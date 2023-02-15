@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 18:00:49 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 20:22:36 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/15 20:26:37 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ int	its_w(t_all *all, int x, int y)
 		return (1);
 	while (t)
 	{
-		if (x == t->wx && y == t->wy)
-			return (1);
+		if (x >= t->wx - 69 && x <= t->wx + 69)
+			if (y >= t->wy - 69 && y <= t->wy + 69)
+				return (1);
 		t = t->next;
 	}
 	return (0);
