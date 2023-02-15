@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 14:55:29 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/15 19:04:08 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,31 @@ typedef struct coin
 	mlx_texture_t	*coins;
 	int				cn;
 	int				cc;
-}	t_collect;
+}	t_coin;
+
+typedef struct codb
+{
+	int			cx;
+	int			cy;
+	struct codb	*next;
+}	t_codb;
 
 typedef struct exit
 {
+	int				exc;
 	int				ex;
 	int				ey;
 	mlx_texture_t	*eo;
 	mlx_texture_t	*ec;
 	mlx_image_t		*exit;
 }	t_exit;
+
+typedef struct wadb
+{
+	int			wx;
+	int			wy;
+	struct wadb	*next;
+}	t_wadb;
 
 typedef struct wall
 {
@@ -120,10 +135,13 @@ typedef struct all
 	int			fd;
 	int			px;
 	int			py;
-	t_collect	coin;
+	int			nm;
+	t_coin		coin;
+	t_codb		*codb;
 	t_grass		grass;
 	t_map		*map;
 	t_wall		wall;
+	t_wadb		*wadb;
 	t_exit		exit;
 }	t_all;
 
@@ -145,12 +163,22 @@ char	*ft_strjoin(char *naah, char *buff);
 char	*thisone(char *naah);
 char	*notthisone(char *naah);
 char	*get_next_line(int fd);
-t_map	*ft_lstnew(char *s);
-t_map	*ft_lstlast(t_map *lst);
+t_map	*ft_lstnew_m(char *s);
+t_wadb	*ft_lstnew_w(int x, int y);
+t_codb	*ft_lstnew_c(int x, int y);
+t_map	*ft_lstlast_m(t_map *lst);
+t_wadb	*ft_lstlast_w(t_wadb *lst);
+t_codb	*ft_lstlast_c(t_codb *lst);
 int		ft_lstsize(t_map *lst);
-void	ft_lstadd_back(t_map *a, t_map *new);
+void	ft_lstadd_back_m(t_map *a, t_map *new);
+void	ft_lstadd_back_w(t_wadb *a, t_wadb *new);
+void	ft_lstadd_back_c(t_codb *a, t_codb *new);
 void	read_map(t_all *all);
 void	set_player(t_all *all, int x, int y);
 void	set_exit(t_all *all, int x, int y);
+int		can_move(t_all *all, char c);
+void	exit_e(t_all *all);
+void	move(t_all *all, char c);
+void	its_coin(t_all *all);
 
 #endif

@@ -17,7 +17,8 @@ HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 
 SOURCES_DIRECTORY = ./sources/
 SOURCES_DIRECTORY_B = ./sources/
-SOURCES_LIST =	down.c \
+SOURCES_LIST =	can_move.c \
+				down.c \
 				ft_lstadd_back.c \
 				ft_lstlast.c \
 				ft_lstnew.c \
@@ -25,10 +26,12 @@ SOURCES_LIST =	down.c \
 				get_next_line_utils.c \
 				get_next_line.c \
 				hook.c \
+				its_coin.c \
 				left.c \
 				load_p_png.c \
 				load_w_png.c \
 				map.c \
+				move.c \
 				read_map.c \
 				right.c \
 				set_coin.c \

@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 13:41:51 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 16:49:13 by agimi            ###   ########.fr       */
+/*   Created: 2023/02/15 18:29:21 by agimi             #+#    #+#             */
+/*   Updated: 2023/02/15 19:45:53 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_map	*ft_lstlast_m(t_map *lst)
+void	move(t_all *all, char c)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
-}
+	int	x;
+	int	y;
+	int	xm;
+	int	ym;
 
-t_wadb	*ft_lstlast_w(t_wadb *lst)
-{
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
-}
-
-t_codb	*ft_lstlast_c(t_codb *lst)
-{
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	x = all->px;
+	y = all->py;
+	if (!can_move(all, c))
+		return ;
+	if (c == 'd')
+		dloop(all);
+	if (c == 'u')
+		uloop(all);
+	if (c == 'l')
+		lloop(all);
+	if (c == 'r')
+		rloop(all);
+	its_coin(all);
+	xm = x - all->px;
+	ym = y - all->px;
+	if (xm == 69 || xm == 69 || ym == 69 || ym == -69)
+	{
+		all->nm++;
+		printf("moves = %d", all->nm);
+	}
 }

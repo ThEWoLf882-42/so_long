@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 15:54:30 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 14:56:38 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/15 20:08:21 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	lloop(t_all *all)
 {
 	static int	i;
 
+	if (!can_move(all, 'l'))
+		return ;
 	mlx_delete_image(all->mlx, all->player.player);
 	if (i >= 0 && i <= 8)
 		all->player.player = mlx_texture_to_image(all->mlx, all->mv.left.l2);
