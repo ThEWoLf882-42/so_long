@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:10:24 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/14 18:11:47 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/15 15:04:01 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,22 @@
 void	open_map(t_all *all, char **av)
 {
 	all->fd = open(av[1], O_RDWR);
+}
+
+void	set_perv(t_all *all)
+{
+	t_map	*m;
+	t_map	*t;
+
+	m = all->map->next;
+	t = all->map;
+	while (m)
+	{
+		m->perv = all->map;
+		m = m->next;
+		all->map = all->map->next;
+	}
+	all->map = t;
 }
 
 void	map(t_all *all, char **av)
@@ -31,6 +47,9 @@ void	map(t_all *all, char **av)
 		ft_lstadd_back(m, ft_lstnew(s));
 		s = get_next_line(all->fd);
 	}
-	all->map = m;
-	all->mpy = ft_lstsize(all->map) - 1;
+	all->map = m->next;
+	all->mpy = ft_lstsize(all->map);
+	set_perv(all);
+	all->player.pc = 0;
+	all-> = 0;
 }

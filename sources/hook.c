@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 18:00:07 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/14 12:36:40 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/15 14:56:04 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void	hook(void *gg)
 	all = (t_all *)gg;
 	x = all->px;
 	y = all->py;
-	if (mlx_is_key_down(all->my.mlx, MLX_KEY_ESCAPE))
-		mlx_close_window(all->my.mlx);
-	else if (mlx_is_key_down(all->my.mlx, MLX_KEY_UP))
+	if (mlx_is_key_down(all->mlx, MLX_KEY_ESCAPE))
+		mlx_close_window(all->mlx);
+	else if (mlx_is_key_down(all->mlx, MLX_KEY_UP))
 		uloop(all);
-	else if (mlx_is_key_down(all->my.mlx, MLX_KEY_DOWN))
+	else if (mlx_is_key_down(all->mlx, MLX_KEY_DOWN))
 		dloop(all);
-	else if (mlx_is_key_down(all->my.mlx, MLX_KEY_LEFT))
+	else if (mlx_is_key_down(all->mlx, MLX_KEY_LEFT))
 		lloop(all);
-	else if (mlx_is_key_down(all->my.mlx, MLX_KEY_RIGHT))
+	else if (mlx_is_key_down(all->mlx, MLX_KEY_RIGHT))
 		rloop(all);
 }

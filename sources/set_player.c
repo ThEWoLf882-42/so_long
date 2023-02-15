@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_grass.c                                        :+:      :+:    :+:   */
+/*   set_player.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 18:49:48 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 14:57:24 by agimi            ###   ########.fr       */
+/*   Created: 2023/02/15 13:49:18 by agimi             #+#    #+#             */
+/*   Updated: 2023/02/15 15:02:53 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	set_grass(t_all *all)
+void	set_player(t_all *all, int x, int y)
 {
-	int	x;
-	int	y;
-
-	x = 0;
-	all->grass.gras1 = mlx_load_png("./img/G.png");
-	all->grass.grass = mlx_texture_to_image(all->mlx, all->grass.gras1);
-	while (x < all->mpx * 69)
-	{
-		y = 0;
-		while (y < all->mpy * 69)
-		{
-			mlx_image_to_window(all->mlx, all->grass.grass, x, y);
-			y += 69;
-		}
-		x += 69;
-	}
+	if (all->player.pc != 0)
+		write(1, "To Many Player\n", 15);
+	all->px = x * 69;
+	all->py = (all->mpy - y - 1) * 69 - 27;
+	all->player.pc++;
 }

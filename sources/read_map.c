@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_grass.c                                        :+:      :+:    :+:   */
+/*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 18:49:48 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 14:57:24 by agimi            ###   ########.fr       */
+/*   Created: 2023/02/15 13:10:59 by agimi             #+#    #+#             */
+/*   Updated: 2023/02/15 14:01:26 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	set_grass(t_all *all)
+void	read_map(t_all *all)
 {
 	int	x;
 	int	y;
 
-	x = 0;
-	all->grass.gras1 = mlx_load_png("./img/G.png");
-	all->grass.grass = mlx_texture_to_image(all->mlx, all->grass.gras1);
-	while (x < all->mpx * 69)
+	all->map = all->map->next;
+	y = all->mpy - 1;
+	while (--y)
 	{
-		y = 0;
-		while (y < all->mpy * 69)
+		x = 0;
+		while (all->map->s[++x])
 		{
-			mlx_image_to_window(all->mlx, all->grass.grass, x, y);
-			y += 69;
+			if (all->map->s[x] == 'P')
+				set_player(all, x, y);
+			if (all->map->s[x] == 'E')
+				set_exit(all, x, y);
 		}
-		x += 69;
+		all->map = all->map->next;
 	}
 }

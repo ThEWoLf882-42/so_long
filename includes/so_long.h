@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/14 19:52:09 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/15 14:55:29 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,15 @@ typedef struct coin
 	int				cc;
 }	t_collect;
 
+typedef struct exit
+{
+	int				ex;
+	int				ey;
+	mlx_texture_t	*eo;
+	mlx_texture_t	*ec;
+	mlx_image_t		*exit;
+}	t_exit;
+
 typedef struct wall
 {
 	mlx_texture_t	*ruc;
@@ -88,31 +97,34 @@ typedef struct wall
 	mlx_image_t		*wall;
 }	t_wall;
 
-typedef struct my_mlx
+typedef struct player
 {
-	mlx_t			*mlx;
-	mlx_image_t		*player;
-}	t_my_mlx;
+	int			pc;
+	mlx_image_t	*player;
+}	t_player;
 
 typedef struct map
 {
 	char		*s;
 	struct map	*next;
+	struct map	*perv;
 }	t_map;
 
 typedef struct all
 {
-	t_my_mlx	my;
+	t_player	player;
 	t_moves		mv;
-	int			px;
-	int			py;
+	mlx_t		*mlx;
 	int			mpx;
 	int			mpy;
 	int			fd;
+	int			px;
+	int			py;
 	t_collect	coin;
 	t_grass		grass;
 	t_map		*map;
 	t_wall		wall;
+	t_exit		exit;
 }	t_all;
 
 void	lloop(t_all *all);
@@ -125,7 +137,7 @@ void	hook(void *gg);
 void	set_frame(t_all *all, int set);
 void	set_grass(t_all *all);
 void	set_coin(t_all *all);
-void	set_wall(t_all *all);
+void	set_s_wall(t_all *all);
 void	map(t_all *all, char **av);
 size_t	ft_strlen(char *s);
 char	*ft_strchr(char *s, int c);
@@ -137,5 +149,8 @@ t_map	*ft_lstnew(char *s);
 t_map	*ft_lstlast(t_map *lst);
 int		ft_lstsize(t_map *lst);
 void	ft_lstadd_back(t_map *a, t_map *new);
+void	read_map(t_all *all);
+void	set_player(t_all *all, int x, int y);
+void	set_exit(t_all *all, int x, int y);
 
 #endif

@@ -29,10 +29,13 @@ SOURCES_LIST =	down.c \
 				load_p_png.c \
 				load_w_png.c \
 				map.c \
+				read_map.c \
 				right.c \
 				set_coin.c \
+				set_exit.c \
 				set_frame.c \
 				set_grass.c \
+				set_player.c \
 				set_wall.c \
 				up.c \
 

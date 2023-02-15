@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:40:36 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/14 19:58:18 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/15 14:01:52 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,4 @@ void	load_p_png(t_all *all)
 	all->mv.left.l1 = mlx_load_png("./img/L1.png");
 	all->mv.left.l0 = mlx_load_png("./img/L0.png");
 	all->mv.left.l2 = mlx_load_png("./img/L2.png");
-	all->px = 3 * 69;
-	all->py = 5 * 69;
 }
