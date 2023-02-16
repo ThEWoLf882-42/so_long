@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   its_coin.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 18:34:00 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/16 10:19:35 by agimi            ###   ########.fr       */
+/*   Created: 2023/02/16 09:58:04 by agimi             #+#    #+#             */
+/*   Updated: 2023/02/16 09:58:44 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	its_coin(t_all *all)
+void	ft_putnbr_fd(int n, int fd)
 {
-	t_codb	*t;
-
-	t = all->codb->next;
-	while (t)
+	if ((n > 2147483647) || (n < -2147483648))
+		return ;
+	if (n == 0)
 	{
-		if (all->px == (t->cx * 69) && all->py + 27 == (t->cy * 69))
-		{
-			mlx_image_to_window(all->mlx, all->grass.grass, \
-				(t->cx * 69), (t->cy * 69));
-			mlx_image_to_window(all->mlx, all->player.player, \
-				(t->cx * 69), (t->cy * 69));
-			all->coin.cc++;
-			t->cx = -1;
-			t->cy = -1;
-		}
-		t = t->next;
+		ft_putchar_fd('0', fd);
+		return ;
 	}
-	if (all->coin.cc == all->coin.cn)
-		exit_e(all);
+	if (n == -2147483648)
+	{
+		ft_putstr_fd("-2147483648", fd);
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n *= -1;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+		ft_putchar_fd(n + '0', fd);
 }

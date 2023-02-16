@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 18:00:07 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 19:57:07 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/16 10:19:09 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,14 @@ void	hook(void *gg)
 		lloop(all);
 	else if (mlx_is_key_down(all->mlx, MLX_KEY_RIGHT))
 		rloop(all);
-	// its_coin(all);
+	its_coin(all);
 	xm = x - all->px;
 	ym = y - all->px;
-	if (xm == 69 || xm == 69 || ym == 69 || ym == -69)
-	{
-		all->nm++;
-		printf("moves = %d\n", all->nm);
-	}
+	// if (xm == 69 || xm == 69 || ym == 69 || ym == -69)
+	// {
+	// 	all->nm++;
+	// 	ft_putstr_fd("Moves = ", 1);
+	// 	ft_putnbr_fd(all->nm, 1);
+	// 	ft_putchar_fd('\n', 1);
+	// }
 }

@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:40:36 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 12:51:40 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/16 09:33:25 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void	load_w_png(t_all *all)
 	all->wall.mr = mlx_load_png("./img/W13.png");
 	all->wall.ml = mlx_load_png("./img/W1.png");
 	all->wall.md = mlx_load_png("./img/W6.png");
+	all->wall.w = mlx_load_png("./img/W.png");
 }

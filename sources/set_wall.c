@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 19:38:35 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 14:57:24 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/16 09:39:09 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,18 @@ void	downwall(t_all *all)
 
 void	set_s_wall(t_all *all)
 {
+	t_wadb	*t;
+
 	load_w_png(all);
 	upwall(all);
 	leftwall(all);
 	rightwall(all);
 	downwall(all);
+	t = all->wadb->next;
+	all->wall.wall = mlx_texture_to_image(all->mlx, all->wall.w);
+	while (t)
+	{
+		mlx_image_to_window(all->mlx, all->wall.wall, t->wx, t->wy);
+		t = t->next;
+	}
 }

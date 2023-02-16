@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:47:29 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 17:19:30 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/16 09:38:38 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int32_t	main(int ac, char **av)
 			return (EXIT_FAILURE);
 		load_p_png(all);
 		set_grass(all);
-		set_s_wall(all);
 		read_map(all);
+		set_s_wall(all);
 		set_coin(all);
 		all->player.player = mlx_texture_to_image(all->mlx, all->mv.down.d1);
 		mlx_image_to_window(all->mlx, all->player.player, all->px, all->py);

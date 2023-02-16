@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:59:35 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 18:59:47 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/16 10:17:10 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	exit_e(t_all *all)
 {
+	all->coin.cc = 0;
 	mlx_delete_image(all->mlx, all->exit.exit);
 	all->exit.exit = mlx_texture_to_image(all->mlx, all->exit.eo);
 	mlx_image_to_window(all->mlx, all->exit.exit, \

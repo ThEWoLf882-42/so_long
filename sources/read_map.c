@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:10:59 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 18:46:02 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/16 10:06:48 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	read_map(t_all *all)
 	while (--y)
 	{
 		x = 0;
-		while (all->map->s[++x])
+		while (all->map->s[++x] && x < all->mpx - 1)
 		{
 			if (all->map->s[x] == 'P')
 				set_player(all, x, (all->mpy - y - 1));

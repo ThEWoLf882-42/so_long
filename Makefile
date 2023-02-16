@@ -23,6 +23,9 @@ SOURCES_LIST =	can_move.c \
 				ft_lstlast.c \
 				ft_lstnew.c \
 				ft_lstsize.c \
+				ft_putchar_fd.c \
+				ft_putnbr_fd.c \
+				ft_putstr_fd.c \
 				get_next_line_utils.c \
 				get_next_line.c \
 				hook.c \

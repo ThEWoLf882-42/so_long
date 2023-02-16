@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 19:04:08 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/16 10:01:04 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ typedef struct wall
 	mlx_texture_t	*mr;
 	mlx_texture_t	*ml;
 	mlx_texture_t	*md;
+	mlx_texture_t	*w;
 	mlx_image_t		*wall;
 }	t_wall;
 
@@ -180,5 +181,8 @@ int		can_move(t_all *all, char c);
 void	exit_e(t_all *all);
 void	move(t_all *all, char c);
 void	its_coin(t_all *all);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
 
 #endif
