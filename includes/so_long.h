@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/16 10:01:04 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/18 12:19:20 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,5 +184,6 @@ void	its_coin(t_all *all);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
+void	get_out(t_all *all);
 
 #endif

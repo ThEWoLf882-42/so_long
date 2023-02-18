@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 18:34:00 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/17 13:02:04 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/17 19:13:15 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ void	its_coin(t_all *all)
 	t = all->codb->next;
 	while (t)
 	{
-		if (all->px >= (t->cx * 69) - 13 && all->px <= (t->cx * 69) + 69 - 13)
+		if (all->px >= (t->cx * 69) - 18 && all->px <= (t->cx * 69) + 69 - 18)
 		{
-			if (all->py + 27 >= (t->cy * 69) - 22 && all->py + 27 <= (t->cy * 69) - 22 + 69)
+			if (all->py + 27 >= (t->cy * 69) - 33 \
+				&& all->py + 27 <= (t->cy * 69) - 33 + 69)
 			{
 				mlx_image_to_window(all->mlx, all->grass.grass, \
 				(t->cx * 69), (t->cy * 69));

@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 18:00:07 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/16 10:19:09 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/18 12:12:46 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	hook(void *gg)
 	else if (mlx_is_key_down(all->mlx, MLX_KEY_RIGHT))
 		rloop(all);
 	its_coin(all);
+	get_out(all);
 	xm = x - all->px;
 	ym = y - all->px;
 	// if (xm == 69 || xm == 69 || ym == 69 || ym == -69)

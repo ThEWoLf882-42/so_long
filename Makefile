@@ -28,6 +28,7 @@ SOURCES_LIST =	can_move.c \
 				ft_putstr_fd.c \
 				get_next_line_utils.c \
 				get_next_line.c \
+				get_out.c \
 				hook.c \
 				its_coin.c \
 				left.c \
