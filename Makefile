@@ -20,15 +20,15 @@ SOURCES_DIRECTORY_B = ./sources/
 SOURCES_LIST =	can_move.c \
 				check_map.c \
 				down.c \
-				libft/ft_lstadd_back.c \
-				libft/ft_lstlast.c \
-				libft/ft_lstnew.c \
-				libft/ft_lstsize.c \
-				libft/ft_putchar_fd.c \
-				libft/ft_putnbr_fd.c \
-				libft/ft_putstr_fd.c \
-				libft/get_next_line_utils.c \
-				libft/get_next_line.c \
+				ft_lstadd_back.c \
+				ft_lstlast.c \
+				ft_lstnew.c \
+				ft_lstsize.c \
+				ft_putchar_fd.c \
+				ft_putnbr_fd.c \
+				ft_putstr_fd.c \
+				get_next_line_utils.c \
+				get_next_line.c \
 				get_out.c \
 				hook.c \
 				its_coin.c \

@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/19 18:31:21 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/19 20:25:00 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ typedef struct wall
 	xpm_t		*luc;
 	xpm_t		*rdc;
 	xpm_t		*ldc;
+	xpm_t		*ruc;
 	xpm_t		*mu;
 	xpm_t		*mr;
 	xpm_t		*ml;
