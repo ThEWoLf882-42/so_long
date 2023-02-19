@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_exit.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:59:35 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/17 19:46:18 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/18 13:24:24 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	exit_e(t_all *all)
 void	set_exit(t_all *all, int x, int y)
 {
 	if (all->exit.exc != 0)
-		write(1, "To Many Exit\n", 13);
+		get_out_s(all, "To Many Exit\n");
 	all->exit.ec = mlx_load_png("./img/EC.png");
 	all->exit.eo = mlx_load_png("./img/EO.png");
 	all->exit.exit = mlx_texture_to_image(all->mlx, all->exit.ec);

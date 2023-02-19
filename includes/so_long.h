@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/18 12:19:20 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/19 12:45:46 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <memory.h>
 # include <fcntl.h>
 # include "MLX42/MLX42.h"
-# define WIDTH 1920
-# define HEIGHT 1080
+# define WIDTH 2560
+# define HEIGHT 1440
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 69
 # endif
@@ -123,7 +123,6 @@ typedef struct map
 {
 	char		*s;
 	struct map	*next;
-	struct map	*perv;
 }	t_map;
 
 typedef struct all
@@ -185,5 +184,7 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	get_out(t_all *all);
+void	get_out_s(t_all *all, char *s);
+void	chech_map(t_all *all, t_map *m);
 
 #endif
