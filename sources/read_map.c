@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:10:59 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/18 20:01:35 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/19 13:03:08 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ void	read_map(t_all *all)
 	y = all->mpy - 1;
 	loop(all, all->map, y);
 	if (!all->player.pc || !all->exit.exc || !all->coin.cn)
-		get_out_s(all, "Noop\nI don't want you to play😝😝😝😝😝😝😝😝😝");
+		get_out_s(all, "Noop\nI don't want you to play 😝😝😝😝😝😝😝😝😝");
 }
