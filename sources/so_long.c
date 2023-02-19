@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:47:29 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/16 09:38:38 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/19 16:06:08 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int32_t	main(int ac, char **av)
 		mlx_loop_hook(all->mlx, &hook, all);
 		mlx_loop(all->mlx);
 		mlx_terminate(all->mlx);
+		pause();
 		return (EXIT_SUCCESS);
 	}
 }

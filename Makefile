@@ -76,12 +76,12 @@ all: $(NAME)
 bonus: $(NAME_B)
 
 $(NAME): $(OBJECTS_DIRECTORY) $(OBJECTS) $(OBJECTS_M)
-	@$(CC) $(FLAGS) $(LIBRARIES) $(INCLUDES) $(MLX42) $(OBJECTS) $(OBJECTS_M) $(ARGS) -o $(NAME)
+	@$(CC) $(FLAGS) $(LIBRARIES) $(INCLUDES) $(OBJECTS) $(OBJECTS_M) $(MLX42) $(ARGS) -o $(NAME)
 	@echo "\n$(NAME): $(GREEN)$(NAME) object files were created$(RESET)"
 	@echo "$(NAME): $(GREEN)$(NAME) was created$(RESET)"
 
 $(NAME_B): $(OBJECTS_DIRECTORY) $(OBJECTS) $(OBJECTS_B)
-	@$(CC) $(FLAGS) $(LIBRARIES) $(INCLUDES) $(MLX42) $(OBJECTS) $(OBJECTS_B) $(ARGS) -o $(NAME)
+	@$(CC) $(FLAGS) $(LIBRARIES) $(INCLUDES) $(OBJECTS) $(OBJECTS_B) $(MLX42) $(ARGS) -o $(NAME)
 	@echo "\n$(NAME): $(GREEN)$(NAME_B) object files were created$(RESET)"
 	@echo "$(NAME): $(GREEN)$(NAME_B) was created$(RESET)"
 

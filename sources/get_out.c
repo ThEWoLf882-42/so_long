@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:13:13 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/19 14:48:19 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/19 16:06:02 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	get_out(t_all *all)
 				ft_putstr_fd("You Won!!\nWhat a great player you are... 😒\n", 1);
 				mlx_close_window(all->mlx);
 				mlx_terminate(all->mlx);
+				pause();
 				exit(0);
 			}
 		}
@@ -37,6 +38,7 @@ void	get_out_s(t_all *all, char *s)
 	{
 		mlx_close_window(all->mlx);
 		mlx_terminate(all->mlx);
+		pause();
 	}
 	exit(1);
 }
