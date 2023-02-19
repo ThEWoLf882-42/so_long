@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_grass.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 18:49:48 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 14:57:24 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/19 18:24:15 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	set_grass(t_all *all)
 	int	y;
 
 	x = 0;
-	all->grass.gras1 = mlx_load_png("./img/G.png");
-	all->grass.grass = mlx_texture_to_image(all->mlx, all->grass.gras1);
+	all->grass.gras1 = mlx_load_xpm42("./xpm/G.xpm42");
+	all->grass.grass = mlx_texture_to_image(all->mlx, &all->grass.gras1->texture);
 	while (x < all->mpx * 69)
 	{
 		y = 0;

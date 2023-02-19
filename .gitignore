@@ -5,3 +5,4 @@ so_long
 *.lib
 *.a
 *.out
+include

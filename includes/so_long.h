@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/19 12:45:46 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/19 18:31:21 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,30 +27,30 @@
 
 typedef struct up
 {
-	mlx_texture_t	*u0;
-	mlx_texture_t	*u1;
-	mlx_texture_t	*u2;
+	xpm_t	*u0;
+	xpm_t	*u1;
+	xpm_t	*u2;
 }	t_up;
 
 typedef struct down
 {
-	mlx_texture_t	*d0;
-	mlx_texture_t	*d1;
-	mlx_texture_t	*d2;
+	xpm_t	*d0;
+	xpm_t	*d1;
+	xpm_t	*d2;
 }	t_down;
 
 typedef struct right
 {
-	mlx_texture_t	*r0;
-	mlx_texture_t	*r1;
-	mlx_texture_t	*r2;
+	xpm_t	*r0;
+	xpm_t	*r1;
+	xpm_t	*r2;
 }	t_right;
 
 typedef struct left
 {
-	mlx_texture_t	*l0;
-	mlx_texture_t	*l1;
-	mlx_texture_t	*l2;
+	xpm_t	*l0;
+	xpm_t	*l1;
+	xpm_t	*l2;
 }	t_left;
 
 typedef struct moves
@@ -63,16 +63,16 @@ typedef struct moves
 
 typedef struct grass
 {
-	mlx_image_t		*grass;
-	mlx_texture_t	*gras1;
+	mlx_image_t	*grass;
+	xpm_t		*gras1;
 }	t_grass;
 
 typedef struct coin
 {
-	mlx_image_t		*coin;
-	mlx_texture_t	*coins;
-	int				cn;
-	int				cc;
+	mlx_image_t	*coin;
+	xpm_t		*coins;
+	int			cn;
+	int			cc;
 }	t_coin;
 
 typedef struct codb
@@ -84,12 +84,12 @@ typedef struct codb
 
 typedef struct exit
 {
-	int				exc;
-	int				ex;
-	int				ey;
-	mlx_texture_t	*eo;
-	mlx_texture_t	*ec;
-	mlx_image_t		*exit;
+	int			exc;
+	int			ex;
+	int			ey;
+	xpm_t		*eo;
+	xpm_t		*ec;
+	mlx_image_t	*exit;
 }	t_exit;
 
 typedef struct wadb
@@ -101,16 +101,15 @@ typedef struct wadb
 
 typedef struct wall
 {
-	mlx_texture_t	*ruc;
-	mlx_texture_t	*luc;
-	mlx_texture_t	*rdc;
-	mlx_texture_t	*ldc;
-	mlx_texture_t	*mu;
-	mlx_texture_t	*mr;
-	mlx_texture_t	*ml;
-	mlx_texture_t	*md;
-	mlx_texture_t	*w;
-	mlx_image_t		*wall;
+	xpm_t		*luc;
+	xpm_t		*rdc;
+	xpm_t		*ldc;
+	xpm_t		*mu;
+	xpm_t		*mr;
+	xpm_t		*ml;
+	xpm_t		*md;
+	xpm_t		*w;
+	mlx_image_t	*wall;
 }	t_wall;
 
 typedef struct player
@@ -149,8 +148,8 @@ void	lloop(t_all *all);
 void	rloop(t_all *all);
 void	uloop(t_all *all);
 void	dloop(t_all *all);
-void	load_p_png(t_all *all);
-void	load_w_png(t_all *all);
+void	load_p_xpm(t_all *all);
+void	load_w_xpm(t_all *all);
 void	hook(void *gg);
 void	set_frame(t_all *all, int set);
 void	set_grass(t_all *all);
