@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:13:13 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/19 12:57:32 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/19 12:59:43 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	get_out(t_all *all)
 {
-	if (all->px >= all->exit.ex && all->px <= all->exit.ex + 6)
+	if (all->px >= all->exit.ex - 6 && all->px <= all->exit.ex + 6)
 	{
 		if (all->py + 27 == all->exit.ey)
 		{
