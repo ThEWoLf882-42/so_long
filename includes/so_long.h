@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/19 20:25:00 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/22 10:54:44 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,8 @@ typedef struct all
 	int			fd;
 	int			px;
 	int			py;
+	int			pxt;
+	int			pyt;
 	int			nm;
 	t_coin		coin;
 	t_codb		*codb;
@@ -150,13 +152,16 @@ void	rloop(t_all *all);
 void	uloop(t_all *all);
 void	dloop(t_all *all);
 void	load_p_xpm(t_all *all);
+void	unload_p_xpm(t_all *all);
 void	load_w_xpm(t_all *all);
+void	unload_w_xpm(t_all *all);
 void	hook(void *gg);
 void	set_frame(t_all *all, int set);
 void	set_grass(t_all *all);
 void	set_coin(t_all *all);
 void	set_s_wall(t_all *all);
 void	map(t_all *all, char **av);
+void	free_map(t_all *all);
 size_t	ft_strlen(char *s);
 char	*ft_strchr(char *s, int c);
 char	*ft_strjoin(char *naah, char *buff);
@@ -185,6 +190,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	get_out(t_all *all);
 void	get_out_s(t_all *all, char *s);
-void	chech_map(t_all *all, t_map *m);
+void	check_map(t_all *all, t_map *m);
+void	free_codb(t_all *all);
+void	the_free(t_all *all);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 19:55:13 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/19 18:21:33 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/21 16:45:33 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,20 @@ void	set_coin(t_all *all)
 			t->cx * 69, t->cy * 69);
 		t = t->next;
 	}
+	// free(all->codb);
+	// all->codb = t;
 }
 
+void	free_codb(t_all *all)
+{
+	t_codb	*t;
+	t_codb	*m;
+
+	t = all->codb;
+	while (t)
+	{
+		m = t->next;
+		free(t);
+		t = m;
+	}
+}

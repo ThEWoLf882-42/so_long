@@ -45,6 +45,7 @@ SOURCES_LIST =	can_move.c \
 				set_grass.c \
 				set_player.c \
 				set_wall.c \
+				the_free.c \
 				up.c \
 
 SOURCES_LIST_M =	so_long.c

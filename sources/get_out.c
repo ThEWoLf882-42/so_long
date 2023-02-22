@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:13:13 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/19 20:23:03 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/21 17:11:06 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 void	get_out(t_all *all)
 {
-	if (all->px >= all->exit.ex - 6 && all->px <= all->exit.ex + 6)
+	if (all->px >= all->exit.ex - 12 && all->px <= all->exit.ex + 12)
 	{
-		if (all->py + 27 == all->exit.ey)
+		if (all->py + 27 >= all->exit.ey - 12 && all->py + 27 <= all->exit.ey + 12)
 		{
 			if (all->coin.cc == -69)
 			{
 				ft_putstr_fd("You Won!!\nWhat a great player you are... 😒\n", 1);
 				mlx_close_window(all->mlx);
 				mlx_terminate(all->mlx);
+				the_free(all);
 				pause();
 				exit(0);
 			}
@@ -38,7 +39,8 @@ void	get_out_s(t_all *all, char *s)
 	{
 		mlx_close_window(all->mlx);
 		mlx_terminate(all->mlx);
-		pause();
 	}
+	the_free(all);
+	pause();
 	exit(1);
 }

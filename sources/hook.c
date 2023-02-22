@@ -6,11 +6,29 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 18:00:07 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/19 18:32:10 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/22 11:00:43 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	count(t_all *all)
+{
+	int	x;
+	int	y;
+
+	x = all->px - all->pxt;
+	y = all->py - all->pyt;
+	if (x == 69 || x == -69 || y == 69 || y == -69)
+	{
+		all->nm++;
+		all->pxt = all->px;
+		all->pyt = all->py;
+		ft_putstr_fd("Moves = ", 1);
+		ft_putnbr_fd(all->nm, 1);
+		ft_putchar_fd('\n', 1);
+	}
+}
 
 void	hook(void *gg)
 {
@@ -29,4 +47,5 @@ void	hook(void *gg)
 		rloop(all);
 	its_coin(all);
 	get_out(all);
+	count(all);
 }

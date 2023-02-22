@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:10:24 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/18 20:28:55 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/22 11:47:54 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,28 @@
 
 void	open_map(t_all *all, char **av)
 {
+	int	i;
+
+	i = ft_strlen(av[1]) - 1;
+	if (av[1][i - 3] != '.' || av[1][i - 2] != 'b'
+		|| av[1][i - 1] != 'e' || av[1][i] != 'r')
+		get_out_s(all, "Hey You\nWhere is the beeeeer\n");
 	all->fd = open(av[1], O_RDWR);
+	if (all->fd == -1)
+		get_out_s(all, "OPEN F.A.I.L\n");
+}
+
+void	free_map(t_all *all)
+{
+	t_map	*m;
+
+	m = all->map;
+	while (m)
+	{
+		free(m->s);
+		m = m->next;
+	}
+	free(all->map);
 }
 
 void	map(t_all *all, char **av)
@@ -32,6 +53,7 @@ void	map(t_all *all, char **av)
 		s = get_next_line(all->fd);
 	}
 	all->map = m->next;
+	free(m);
 	all->mpy = ft_lstsize(all->map);
 	all->player.pc = 0;
 	all->exit.exc = 0;

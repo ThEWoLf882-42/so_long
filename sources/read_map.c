@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:10:59 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/19 13:03:08 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/21 16:30:27 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,13 @@ void	loop(t_all *all, t_map *map, int y)
 
 void	read_map(t_all *all)
 {
-	int	y;
+	int		y;
+	t_map	*t;
 
-	chech_map(all, all->map);
-	all->map = all->map->next;
+	check_map(all, all->map);
+	t = all->map->next;
 	y = all->mpy - 1;
-	loop(all, all->map, y);
+	loop(all, t, y);
 	if (!all->player.pc || !all->exit.exc || !all->coin.cn)
-		get_out_s(all, "Noop\nI don't want you to play 😝😝😝😝😝😝😝😝😝");
+		get_out_s(all, "Noop\nI don't want you to play 😝😝😝😝😝😝😝😝😝\n");
 }
