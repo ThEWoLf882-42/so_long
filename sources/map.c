@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:10:24 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/22 11:47:54 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/22 12:13:45 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,6 @@ void	open_map(t_all *all, char **av)
 	all->fd = open(av[1], O_RDWR);
 	if (all->fd == -1)
 		get_out_s(all, "OPEN F.A.I.L\n");
-}
-
-void	free_map(t_all *all)
-{
-	t_map	*m;
-
-	m = all->map;
-	while (m)
-	{
-		free(m->s);
-		m = m->next;
-	}
-	free(all->map);
 }
 
 void	map(t_all *all, char **av)

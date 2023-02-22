@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 18:49:48 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/19 18:24:15 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/22 12:00:58 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	set_grass(t_all *all)
 
 	x = 0;
 	all->grass.gras1 = mlx_load_xpm42("./xpm/G.xpm42");
-	all->grass.grass = mlx_texture_to_image(all->mlx, &all->grass.gras1->texture);
+	all->grass.grass = mlx_texture_to_image(all->mlx, \
+	&all->grass.gras1->texture);
 	while (x < all->mpx * 69)
 	{
 		y = 0;

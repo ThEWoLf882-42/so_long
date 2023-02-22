@@ -36,7 +36,6 @@ SOURCES_LIST =	can_move.c \
 				load_p_xpm.c \
 				load_w_xpm.c \
 				map.c \
-				move.c \
 				read_map.c \
 				right.c \
 				set_coin.c \
@@ -45,7 +44,6 @@ SOURCES_LIST =	can_move.c \
 				set_grass.c \
 				set_player.c \
 				set_wall.c \
-				the_free.c \
 				up.c \
 
 SOURCES_LIST_M =	so_long.c
