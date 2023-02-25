@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 13:41:51 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 16:49:13 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/24 20:07:03 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@ t_map	*ft_lstlast_m(t_map *lst)
 	if (!lst)
 		return (NULL);
 	while (lst->next)
+		lst = lst->next;
+	return (lst);
+}
+
+t_map	*ft_lstplast_m(t_map *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next->next)
 		lst = lst->next;
 	return (lst);
 }

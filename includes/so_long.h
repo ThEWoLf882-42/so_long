@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/22 10:54:44 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/25 11:30:05 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ typedef struct coin
 	mlx_image_t	*coin;
 	xpm_t		*coins;
 	int			cn;
+	int			cnt;
 	int			cc;
 }	t_coin;
 
@@ -85,6 +86,7 @@ typedef struct codb
 typedef struct exit
 {
 	int			exc;
+	int			exct;
 	int			ex;
 	int			ey;
 	xpm_t		*eo;
@@ -116,6 +118,7 @@ typedef struct wall
 typedef struct player
 {
 	int			pc;
+	int			pct;
 	mlx_image_t	*player;
 }	t_player;
 
@@ -123,6 +126,7 @@ typedef struct map
 {
 	char		*s;
 	struct map	*next;
+	struct map	*perv;
 }	t_map;
 
 typedef struct all
@@ -172,6 +176,7 @@ t_map	*ft_lstnew_m(char *s);
 t_wadb	*ft_lstnew_w(int x, int y);
 t_codb	*ft_lstnew_c(int x, int y);
 t_map	*ft_lstlast_m(t_map *lst);
+t_map	*ft_lstplast_m(t_map *lst);
 t_wadb	*ft_lstlast_w(t_wadb *lst);
 t_codb	*ft_lstlast_c(t_codb *lst);
 int		ft_lstsize(t_map *lst);
@@ -193,5 +198,6 @@ void	get_out_s(t_all *all, char *s);
 void	check_map(t_all *all, t_map *m);
 void	free_codb(t_all *all);
 void	the_free(t_all *all);
+void	a_path(t_all *all);
 
 #endif

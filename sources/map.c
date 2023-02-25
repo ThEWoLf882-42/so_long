@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:10:24 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/22 12:13:45 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/25 19:56:52 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	map(t_all *all, char **av)
 	all->map = m->next;
 	free(m);
 	all->mpy = ft_lstsize(all->map);
+	if (all->mpx < 3 || all->mpy < 3)
+		get_out_s(all, "I wonder HOW it's supposed to work\n");
 	all->player.pc = 0;
 	all->exit.exc = 0;
 	all->coin.cn = 0;

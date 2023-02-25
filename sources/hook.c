@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 18:00:07 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/22 12:18:54 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/24 20:04:00 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	hook(void *gg)
 		lloop(all);
 	else if (mlx_is_key_down(all->mlx, MLX_KEY_RIGHT))
 		rloop(all);
+	count(all);
 	its_coin(all);
 	get_out(all);
-	count(all);
 }

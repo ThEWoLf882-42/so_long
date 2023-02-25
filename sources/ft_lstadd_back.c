@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 13:41:46 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/15 16:40:32 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/24 19:57:21 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,15 @@ void	ft_lstadd_back_m(t_map *a, t_map *new)
 	if (!a || !new)
 		return ;
 	if (a)
+	{
 		ft_lstlast_m(a)->next = new;
+		ft_lstlast_m(a)->perv = ft_lstplast_m(a);
+	}
 	else
+	{
 		a = new;
+		a->perv = NULL;
+	}
 }
 
 void	ft_lstadd_back_w(t_wadb *a, t_wadb *new)

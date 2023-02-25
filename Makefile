@@ -17,7 +17,8 @@ HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 
 SOURCES_DIRECTORY = ./sources/
 SOURCES_DIRECTORY_B = ./sources/
-SOURCES_LIST =	can_move.c \
+SOURCES_LIST =	a_path.c \
+				can_move.c \
 				check_map.c \
 				down.c \
 				ft_lstadd_back.c \
