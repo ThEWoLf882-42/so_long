@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/28 16:50:47 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/28 17:25:15 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <memory.h>
 # include <fcntl.h>
 # include "MLX42/MLX42.h"
-# define WIDTH 2560
-# define HEIGHT 1440
+# define WIDTH 3200
+# define HEIGHT 1800
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 69
 # endif
