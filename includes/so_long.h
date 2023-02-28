@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/25 11:30:05 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/28 16:50:47 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,5 +199,7 @@ void	check_map(t_all *all, t_map *m);
 void	free_codb(t_all *all);
 void	the_free(t_all *all);
 void	a_path(t_all *all);
+t_all	*init(char **av);
+void	load(t_all *all);
 
 #endif

@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 15:47:29 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/28 17:16:22 by agimi            ###   ########.fr       */
+/*   Created: 2023/02/28 16:39:53 by agimi             #+#    #+#             */
+/*   Updated: 2023/02/28 16:50:51 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int32_t	main(int ac, char **av)
+t_all	*init(char **av)
 {
 	t_all	*all;
 
-	if (ac == 2)
-	{
-		all = init(av);
-		load(all);
-		a_path(all);
-		mlx_loop_hook(all->mlx, &hook, all);
-		mlx_loop(all->mlx);
-		mlx_terminate(all->mlx);
-		return (EXIT_SUCCESS);
-	}
+	all = malloc(sizeof(t_all));
+	map(all, av);
+	all->mlx = mlx_init(all->mpx * 69, all->mpy * 69, "so_long", false);
+	if (!all->mlx)
+		exit(1);
+	return (all);
 }

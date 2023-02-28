@@ -32,10 +32,12 @@ SOURCES_LIST =	a_path.c \
 				get_next_line.c \
 				get_out.c \
 				hook.c \
+				init.c \
 				its_coin.c \
 				left.c \
 				load_p_xpm.c \
 				load_w_xpm.c \
+				load.c \
 				map.c \
 				read_map.c \
 				right.c \
