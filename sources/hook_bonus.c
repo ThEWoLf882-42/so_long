@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hook.c                                             :+:      :+:    :+:   */
+/*   hook_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 18:00:07 by agimi             #+#    #+#             */
-/*   Updated: 2023/03/08 12:25:35 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/08 12:26:33 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	count(t_all *all)
+void	count_b(t_all *all)
 {
 	int		x;
 	int		y;
+	char	*str;
 
 	x = all->px - all->pxt;
 	y = all->py - all->pyt;
@@ -24,13 +25,14 @@ void	count(t_all *all)
 		all->nm++;
 		all->pxt = all->px;
 		all->pyt = all->py;
-		ft_putstr_fd("Moves = ", 1);
-		ft_putnbr_fd(all->nm, 1);
-		ft_putchar_fd('\n', 1);
+		str = ft_itoa(all->nm);
+		mlx_delete_image(all->mlx, all->mc);
+		all->mc = mlx_put_string(all->mlx, str, (all->mpx * 69) / 2, 20);
+		free(str);
 	}
 }
 
-void	hook(void *gg)
+void	hook_b(void *gg)
 {
 	t_all	*all;
 
@@ -45,7 +47,7 @@ void	hook(void *gg)
 		lloop(all);
 	else if (mlx_is_key_down(all->mlx, MLX_KEY_RIGHT))
 		rloop(all);
-	count(all);
+	count_b(all);
 	its_coin(all);
 	get_out(all);
 }

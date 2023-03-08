@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:13:13 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/25 18:08:14 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/08 11:13:00 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,12 @@ void	get_out_s(t_all *all, char *s)
 		mlx_terminate(all->mlx);
 	}
 	exit(1);
+}
+
+void	loser(t_all *all)
+{
+	ft_putstr_fd("Gotta Catch 'Em All\nLoser 🤪\n", 1);
+	mlx_close_window(all->mlx);
+	mlx_terminate(all->mlx);
+	exit(0);
 }

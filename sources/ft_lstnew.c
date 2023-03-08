@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 13:41:56 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/24 19:54:14 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/08 11:58:07 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ t_wadb	*ft_lstnew_w(int x, int y)
 	new = malloc(sizeof(t_wadb));
 	if (!new)
 		return (NULL);
-	new->wx = x;
-	new->wy = y;
+	new->wx = x * 69;
+	new->wy = y * 69;
 	new->next = NULL;
 	return (new);
 }

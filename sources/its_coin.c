@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   its_coin.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 18:34:00 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/17 19:13:15 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/03 16:56:12 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	its_coin(t_all *all)
 				mlx_image_to_window(all->mlx, all->player.player, \
 				all->px, all->py);
 				all->coin.cc++;
+				all->coin.cp = (all->coin.cc * 100) / all->coin.cn;
 				t->cx = -1;
 				t->cy = -1;
 			}

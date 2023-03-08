@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 18:47:47 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/25 19:09:40 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/08 13:08:00 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	up_do_ch(t_all *all, t_map *m)
 	m = ft_lstlast_m(m);
 	i = -1;
 	if ((int)ft_strlen(m->s) != all->mpx)
-		get_out_s(all, "Really!!\nnot a nice size you have...\n");
+		get_out_s(all, "Really!!\nThat's not a BBC size...\n");
 	while (m->s[++i] && i < all->mpx)
 		if (m->s[i] != '1')
 			get_out_s(all, "What kind of walls this is\n");
@@ -38,7 +38,7 @@ void	corner_ch(t_all *all, t_map *m)
 	while (++i < all->mpy - 1)
 	{
 		if ((int)ft_strlen(m->s) - 1 != all->mpx)
-			get_out_s(all, "Really!!\nnot a nice size you have...\n");
+			get_out_s(all, "Really!!\nThat's not a BBC size...\n");
 		if (m->s[0] != '1' || m->s[all->mpx - 1] != '1')
 			get_out_s(all, "What kind of walls this is\n");
 		m = m->next;

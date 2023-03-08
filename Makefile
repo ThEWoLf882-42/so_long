@@ -17,10 +17,15 @@ HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 
 SOURCES_DIRECTORY = ./sources/
 SOURCES_DIRECTORY_B = ./sources/
-SOURCES_LIST =	a_path.c \
+SOURCES_LIST =	a_path_bonus.c \
+				a_path.c \
+				can_move_bonus.c \
 				can_move.c \
 				check_map.c \
 				down.c \
+				ehook.c \
+				ft_is_ascii.c \
+				ft_itoa.c \
 				ft_lstadd_back.c \
 				ft_lstlast.c \
 				ft_lstnew.c \
@@ -31,17 +36,22 @@ SOURCES_LIST =	a_path.c \
 				get_next_line_utils.c \
 				get_next_line.c \
 				get_out.c \
+				hook_bonus.c \
 				hook.c \
 				init.c \
 				its_coin.c \
 				left.c \
+				load_bonus.c \
+				load_e_xpm.c \
 				load_p_xpm.c \
 				load_w_xpm.c \
 				load.c \
 				map.c \
+				read_map_bonus.c \
 				read_map.c \
 				right.c \
 				set_coin.c \
+				set_ene.c \
 				set_exit.c \
 				set_frame.c \
 				set_grass.c \
@@ -50,7 +60,7 @@ SOURCES_LIST =	a_path.c \
 				up.c \
 
 SOURCES_LIST_M =	so_long.c
-SOURCES_LIST_B =	
+SOURCES_LIST_B =	so_long_bonus.c
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 SOURCES_M = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST_M))
@@ -83,7 +93,7 @@ $(NAME): $(OBJECTS_DIRECTORY) $(OBJECTS) $(OBJECTS_M)
 	@echo "$(NAME): $(GREEN)$(NAME) was created$(RESET)"
 
 $(NAME_B): $(OBJECTS_DIRECTORY) $(OBJECTS) $(OBJECTS_B)
-	@$(CC) $(FLAGS) $(LIBRARIES) $(INCLUDES) $(OBJECTS) $(OBJECTS_B) $(MLX42) $(ARGS) -o $(NAME)
+	@$(CC) $(FLAGS) $(LIBRARIES) $(INCLUDES) $(OBJECTS) $(OBJECTS_B) $(MLX42) $(ARGS) -o $(NAME_B)
 	@echo "\n$(NAME): $(GREEN)$(NAME_B) object files were created$(RESET)"
 	@echo "$(NAME): $(GREEN)$(NAME_B) was created$(RESET)"
 

@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   set_ene.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 15:47:29 by agimi             #+#    #+#             */
-/*   Updated: 2023/03/08 12:20:30 by agimi            ###   ########.fr       */
+/*   Created: 2023/03/01 18:24:02 by agimi             #+#    #+#             */
+/*   Updated: 2023/03/08 12:58:09 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int32_t	main(int ac, char **av)
+void	set_ene(t_all *all)
 {
-	t_all	*all;
-
-	if (ac == 2)
-	{
-		all = init(av);
-		load(all);
-		a_path(all);
-		mlx_loop_hook(all->mlx, &hook, all);
-		mlx_loop(all->mlx);
-		mlx_terminate(all->mlx);
-		return (EXIT_SUCCESS);
-	}
+	all->ene.ene = mlx_texture_to_image(all->mlx, &all->ene.ed0->texture);
+	mlx_image_to_window(all->mlx, all->ene.ene, all->ene.ex, all->ene.ey);
 }

@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/28 17:25:15 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/08 12:28:19 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ typedef struct coin
 	int			cn;
 	int			cnt;
 	int			cc;
+	int			cp;
 }	t_coin;
 
 typedef struct codb
@@ -122,6 +123,32 @@ typedef struct player
 	mlx_image_t	*player;
 }	t_player;
 
+typedef struct enemie
+{
+	int			ex;
+	int			ey;
+	int			esp;
+	int			ec;
+	int			ect;
+	xpm_t		*ed0;
+	xpm_t		*ed1;
+	xpm_t		*ed2;
+	xpm_t		*ed3;
+	xpm_t		*el0;
+	xpm_t		*el1;
+	xpm_t		*el2;
+	xpm_t		*el3;
+	xpm_t		*er0;
+	xpm_t		*er1;
+	xpm_t		*er2;
+	xpm_t		*er3;
+	xpm_t		*eu0;
+	xpm_t		*eu1;
+	xpm_t		*eu2;
+	xpm_t		*eu3;
+	mlx_image_t	*ene;
+}	t_ene;
+
 typedef struct map
 {
 	char		*s;
@@ -132,6 +159,7 @@ typedef struct map
 typedef struct all
 {
 	t_player	player;
+	t_ene		ene;
 	t_moves		mv;
 	mlx_t		*mlx;
 	int			mpx;
@@ -149,6 +177,7 @@ typedef struct all
 	t_wall		wall;
 	t_wadb		*wadb;
 	t_exit		exit;
+	mlx_image_t	*mc;
 }	t_all;
 
 void	lloop(t_all *all);
@@ -160,18 +189,21 @@ void	unload_p_xpm(t_all *all);
 void	load_w_xpm(t_all *all);
 void	unload_w_xpm(t_all *all);
 void	hook(void *gg);
+void	hook_b(void *gg);
 void	set_frame(t_all *all, int set);
 void	set_grass(t_all *all);
 void	set_coin(t_all *all);
 void	set_s_wall(t_all *all);
 void	map(t_all *all, char **av);
 void	free_map(t_all *all);
+char	*ft_itoa(int n);
 size_t	ft_strlen(char *s);
 char	*ft_strchr(char *s, int c);
 char	*ft_strjoin(char *naah, char *buff);
 char	*thisone(char *naah);
 char	*notthisone(char *naah);
 char	*get_next_line(int fd);
+int		is_ascii(char c);
 t_map	*ft_lstnew_m(char *s);
 t_wadb	*ft_lstnew_w(int x, int y);
 t_codb	*ft_lstnew_c(int x, int y);
@@ -184,6 +216,7 @@ void	ft_lstadd_back_m(t_map *a, t_map *new);
 void	ft_lstadd_back_w(t_wadb *a, t_wadb *new);
 void	ft_lstadd_back_c(t_codb *a, t_codb *new);
 void	read_map(t_all *all);
+void	read_map_b(t_all *all);
 void	set_player(t_all *all, int x, int y);
 void	set_exit(t_all *all, int x, int y);
 int		can_move(t_all *all, char c);
@@ -199,7 +232,21 @@ void	check_map(t_all *all, t_map *m);
 void	free_codb(t_all *all);
 void	the_free(t_all *all);
 void	a_path(t_all *all);
+void	a_path_b(t_all *all);
 t_all	*init(char **av);
 void	load(t_all *all);
+void	load_b(t_all *all);
+void	load_e1(t_all *all);
+void	load_e2(t_all *all);
+void	load_e3(t_all *all);
+void	set_ene(t_all *all);
+void	ehook(mlx_key_data_t k, void *gg);
+int		can_move_e(t_all *all, char c);
+int		its_w_e(t_all *all, int x, int y);
+void	deloop(t_all *all);
+void	leloop(t_all *all);
+void	reloop(t_all *all);
+void	ueloop(t_all *all);
+void	loser(t_all *all);
 
 #endif

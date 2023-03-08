@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   so_long_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 15:47:29 by agimi             #+#    #+#             */
-/*   Updated: 2023/03/08 12:20:30 by agimi            ###   ########.fr       */
+/*   Created: 2023/03/08 12:12:22 by agimi             #+#    #+#             */
+/*   Updated: 2023/03/08 12:33:43 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ int32_t	main(int ac, char **av)
 	if (ac == 2)
 	{
 		all = init(av);
-		load(all);
-		a_path(all);
-		mlx_loop_hook(all->mlx, &hook, all);
+		load_b(all);
+		a_path_b(all);
+		set_ene(all);
+		mlx_loop_hook(all->mlx, &hook_b, all);
+		mlx_key_hook(all->mlx, &ehook, all);
 		mlx_loop(all->mlx);
 		mlx_terminate(all->mlx);
 		return (EXIT_SUCCESS);

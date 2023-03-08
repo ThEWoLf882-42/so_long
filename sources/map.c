@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:10:24 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/25 19:56:52 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/08 12:19:44 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	open_map(t_all *all, char **av)
 	int	i;
 
 	i = ft_strlen(av[1]) - 1;
-	if (av[1][i - 3] != '.' || av[1][i - 2] != 'b'
-		|| av[1][i - 1] != 'e' || av[1][i] != 'r')
+	if ((av[1][i - 3] != '.' || av[1][i - 2] != 'b'
+		|| av[1][i - 1] != 'e' || av[1][i] != 'r') || !is_ascii(av[1][i - 4]))
 		get_out_s(all, "Hey You\nWhere is the beeeeer\n");
 	all->fd = open(av[1], O_RDWR);
 	if (all->fd == -1)
@@ -47,6 +47,7 @@ void	map(t_all *all, char **av)
 	all->player.pc = 0;
 	all->exit.exc = 0;
 	all->coin.cn = 0;
+	all->coin.cp = 0;
 	all->codb = ft_lstnew_c(0, 0);
 	all->wadb = ft_lstnew_w(0, 0);
 	if (all->mpx * 69 > WIDTH || (all->mpy) * 69 > HEIGHT)
