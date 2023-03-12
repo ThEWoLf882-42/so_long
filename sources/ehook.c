@@ -6,11 +6,18 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 16:25:03 by agimi             #+#    #+#             */
-/*   Updated: 2023/03/08 13:16:00 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/12 15:05:17 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+int	abs(int a)
+{
+	if (a < 0)
+		return (a * -1);
+	return (a);
+}
 
 int	load_e(t_all *all, int i)
 {
@@ -44,53 +51,25 @@ void	enemie(t_all *all)
 
 void	ehook(mlx_key_data_t k, void *gg)
 {
-	t_all		*all;
+	t_all	*all;
+	int		x;
+	int		y;
 
 	all = (t_all *)gg;
 	(void)k;
 	enemie(all);
-	if (mlx_is_key_down(all->mlx, 265))
-	{
-		if (can_move_e(all, 'd'))
-			deloop(all);
-		else if (can_move_e(all, 'l'))
-			leloop(all);
-		else if (can_move_e(all, 'r'))
-			reloop(all);
-		else if (can_move_e(all, 'u'))
-			ueloop(all);
-	}
-	else if (mlx_is_key_down(all->mlx, 264))
-	{
-		if (can_move_e(all, 'u'))
-			ueloop(all);
-		else if (can_move_e(all, 'r'))
-			reloop(all);
-		else if (can_move_e(all, 'l'))
-			leloop(all);
-		else if (can_move_e(all, 'd'))
-			deloop(all);
-	}
-	else if (mlx_is_key_down(all->mlx, 263))
-	{
-		if (can_move_e(all, 'r'))
-			reloop(all);
-		else if (can_move_e(all, 'u'))
-			ueloop(all);
-		else if (can_move_e(all, 'd'))
-			deloop(all);
-		else if (can_move_e(all, 'l'))
-			leloop(all);
-	}
-	else if (mlx_is_key_down(all->mlx, 262))
-	{
-		if (can_move_e(all, 'l'))
-			leloop(all);
-		else if (can_move_e(all, 'd'))
-			deloop(all);
-		else if (can_move_e(all, 'u'))
-			ueloop(all);
-		else if (can_move_e(all, 'r'))
-			reloop(all);
-	}
+	x = all->px - all->ene.ex;
+	y = (all->py + 27) - all->ene.ey;
+	if (x >= 0 && can_move_e(all, 'r'))
+		reloop(all);
+	if (x < 0 && can_move_e(all, 'l'))
+		leloop(all);
+	if (y <= 0 && can_move_e(all, 'u'))
+		ueloop(all);
+	if (y > 0 && can_move_e(all, 'd'))
+		deloop(all);
+	if (all->px >= all->ene.ex - 35 && all->px <= all->ene.ex + 35)
+		if (all->py + 27 >= all->ene.ey - 35
+			&& all->py + 27 <= all->ene.ey + 35)
+			loser(all);
 }
