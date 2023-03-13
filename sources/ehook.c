@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 16:25:03 by agimi             #+#    #+#             */
-/*   Updated: 2023/03/12 15:05:17 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/13 15:09:16 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,13 @@ void	ehook(mlx_key_data_t k, void *gg)
 	enemie(all);
 	x = all->px - all->ene.ex;
 	y = (all->py + 27) - all->ene.ey;
-	if (x >= 0 && can_move_e(all, 'r'))
+	if (x > 0 && can_move_e(all, 'r'))
 		reloop(all);
-	if (x < 0 && can_move_e(all, 'l'))
+	else if (x < 0 && can_move_e(all, 'l'))
 		leloop(all);
-	if (y <= 0 && can_move_e(all, 'u'))
+	else if (y < 0 && can_move_e(all, 'u'))
 		ueloop(all);
-	if (y > 0 && can_move_e(all, 'd'))
+	else if (y > 0 && can_move_e(all, 'd'))
 		deloop(all);
 	if (all->px >= all->ene.ex - 35 && all->px <= all->ene.ex + 35)
 		if (all->py + 27 >= all->ene.ey - 35
