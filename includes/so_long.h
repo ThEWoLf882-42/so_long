@@ -6,17 +6,15 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/03/08 12:28:19 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/13 15:32:26 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <memory.h>
 # include <fcntl.h>
 # include "MLX42/MLX42.h"
 # define WIDTH 3200
