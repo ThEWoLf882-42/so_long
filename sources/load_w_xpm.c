@@ -6,11 +6,19 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 18:02:24 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/22 12:27:01 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/16 12:04:18 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	xpm(t_all *all)
+{
+	if (!all->wall.ruc || !all->wall.luc || !all->wall.rdc || !all->wall.ldc
+		|| !all->wall.mu || !all->wall.mr || !all->wall.ml
+		|| !all->wall.md || !all->wall.w)
+		get_out_s(all, "XPMMMM'S|\n");
+}
 
 void	load_w_xpm(t_all *all)
 {
@@ -23,17 +31,5 @@ void	load_w_xpm(t_all *all)
 	all->wall.ml = mlx_load_xpm42("./xpm/ML.xpm42");
 	all->wall.md = mlx_load_xpm42("./xpm/MD.xpm42");
 	all->wall.w = mlx_load_xpm42("./xpm/W.xpm42");
-}
-
-void	unload_w_xpm(t_all *all)
-{
-	mlx_delete_xpm42(all->wall.ruc);
-	mlx_delete_xpm42(all->wall.luc);
-	mlx_delete_xpm42(all->wall.rdc);
-	mlx_delete_xpm42(all->wall.ldc);
-	mlx_delete_xpm42(all->wall.mu);
-	mlx_delete_xpm42(all->wall.mr);
-	mlx_delete_xpm42(all->wall.ml);
-	mlx_delete_xpm42(all->wall.md);
-	mlx_delete_xpm42(all->wall.w);
+	xpm(all);
 }

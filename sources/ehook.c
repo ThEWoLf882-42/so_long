@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 16:25:03 by agimi             #+#    #+#             */
-/*   Updated: 2023/03/13 15:09:16 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/16 18:27:40 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,25 +49,24 @@ void	enemie(t_all *all)
 	}
 }
 
-void	ehook(mlx_key_data_t k, void *gg)
+void	ehook(void *gg)
 {
 	t_all	*all;
 	int		x;
 	int		y;
 
 	all = (t_all *)gg;
-	(void)k;
 	enemie(all);
 	x = all->px - all->ene.ex;
 	y = (all->py + 27) - all->ene.ey;
-	if (x > 0 && can_move_e(all, 'r'))
+	if (x > 1 && can_move_e(all, 'r'))
 		reloop(all);
-	else if (x < 0 && can_move_e(all, 'l'))
-		leloop(all);
-	else if (y < 0 && can_move_e(all, 'u'))
-		ueloop(all);
 	else if (y > 0 && can_move_e(all, 'd'))
 		deloop(all);
+	else if (x < -1 && can_move_e(all, 'l'))
+		leloop(all);
+	else if (y < -1 && can_move_e(all, 'u'))
+		ueloop(all);
 	if (all->px >= all->ene.ex - 35 && all->px <= all->ene.ex + 35)
 		if (all->py + 27 >= all->ene.ey - 35
 			&& all->py + 27 <= all->ene.ey + 35)

@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:12:22 by agimi             #+#    #+#             */
-/*   Updated: 2023/03/08 12:33:43 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/16 14:09:59 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int32_t	main(int ac, char **av)
 		load_b(all);
 		a_path_b(all);
 		set_ene(all);
-		mlx_loop_hook(all->mlx, &hook_b, all);
-		mlx_key_hook(all->mlx, &ehook, all);
+		mlx_key_hook(all->mlx, &hook_b, all);
+		mlx_loop_hook(all->mlx, &ehook, all);
 		mlx_loop(all->mlx);
 		mlx_terminate(all->mlx);
 		return (EXIT_SUCCESS);

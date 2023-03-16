@@ -6,11 +6,20 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 18:01:49 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/20 13:45:17 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/16 12:03:57 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	xpm(t_all *all)
+{
+	if (!all->mv.down.d1 || !all->mv.down.d0 || !all->mv.down.d2
+		|| !all->mv.up.u1 || !all->mv.up.u0 || !all->mv.up.u2
+		|| !all->mv.right.r1 ||!all->mv.right.r0 || !all->mv.right.r2
+		|| !all->mv.left.l1 || !all->mv.left.l0 || !all->mv.left.l2)
+		get_out_s(all, "XPMMMM'S|\n");
+}
 
 void	load_p_xpm(t_all *all)
 {
@@ -26,20 +35,5 @@ void	load_p_xpm(t_all *all)
 	all->mv.left.l1 = mlx_load_xpm42("./xpm/L1.xpm42");
 	all->mv.left.l0 = mlx_load_xpm42("./xpm/L0.xpm42");
 	all->mv.left.l2 = mlx_load_xpm42("./xpm/L2.xpm42");
-}
-
-void	unload_p_xpm(t_all *all)
-{
-	mlx_delete_xpm42(all->mv.down.d1);
-	mlx_delete_xpm42(all->mv.down.d0);
-	mlx_delete_xpm42(all->mv.down.d2);
-	mlx_delete_xpm42(all->mv.up.u1);
-	mlx_delete_xpm42(all->mv.up.u0);
-	mlx_delete_xpm42(all->mv.up.u2);
-	mlx_delete_xpm42(all->mv.right.r1);
-	mlx_delete_xpm42(all->mv.right.r0);
-	mlx_delete_xpm42(all->mv.right.r2);
-	mlx_delete_xpm42(all->mv.left.l1);
-	mlx_delete_xpm42(all->mv.left.l0);
-	mlx_delete_xpm42(all->mv.left.l2);
+	xpm(all);
 }

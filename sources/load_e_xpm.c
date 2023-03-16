@@ -6,11 +6,20 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:13:11 by agimi             #+#    #+#             */
-/*   Updated: 2023/03/08 13:01:40 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/16 18:28:23 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	xpm(t_all *all)
+{
+	if (!all->ene.ed0 || !all->ene.ed1 || !all->ene.ed2 || !all->ene.ed3
+		|| !all->ene.el0 || !all->ene.el1 || !all->ene.el2 || !all->ene.el3
+		|| !all->ene.er0 || !all->ene.er1 || !all->ene.er2 || !all->ene.er3
+		|| !all->ene.eu0 || !all->ene.eu1 || !all->ene.eu2 || !all->ene.eu3)
+		get_out_s(all, "XPMMMM'S\n");
+}
 
 void	load_e1(t_all *all)
 {
@@ -30,7 +39,8 @@ void	load_e1(t_all *all)
 	all->ene.eu1 = mlx_load_xpm42("./xpm/E1U1.xpm42");
 	all->ene.eu2 = mlx_load_xpm42("./xpm/E1U2.xpm42");
 	all->ene.eu3 = mlx_load_xpm42("./xpm/E1U3.xpm42");
-	all->ene.esp = 6;
+	all->ene.esp = 2;
+	xpm(all);
 }
 
 void	load_e2(t_all *all)
@@ -51,7 +61,8 @@ void	load_e2(t_all *all)
 	all->ene.eu1 = mlx_load_xpm42("./xpm/E2U1.xpm42");
 	all->ene.eu2 = mlx_load_xpm42("./xpm/E2U2.xpm42");
 	all->ene.eu3 = mlx_load_xpm42("./xpm/E2U3.xpm42");
-	all->ene.esp = 9;
+	all->ene.esp = 3;
+	xpm(all);
 }
 
 void	load_e3(t_all *all)
@@ -72,5 +83,6 @@ void	load_e3(t_all *all)
 	all->ene.eu1 = mlx_load_xpm42("./xpm/E3U1.xpm42");
 	all->ene.eu2 = mlx_load_xpm42("./xpm/E3U2.xpm42");
 	all->ene.eu3 = mlx_load_xpm42("./xpm/E3U3.xpm42");
-	all->ene.esp = 12;
+	all->ene.esp = 4;
+	xpm(all);
 }

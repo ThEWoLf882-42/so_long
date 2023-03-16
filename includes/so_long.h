@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:26:55 by agimi             #+#    #+#             */
-/*   Updated: 2023/03/13 15:32:26 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/16 14:10:26 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,17 +183,14 @@ void	rloop(t_all *all);
 void	uloop(t_all *all);
 void	dloop(t_all *all);
 void	load_p_xpm(t_all *all);
-void	unload_p_xpm(t_all *all);
 void	load_w_xpm(t_all *all);
-void	unload_w_xpm(t_all *all);
 void	hook(void *gg);
-void	hook_b(void *gg);
+void	hook_b(mlx_key_data_t k, void *gg);
 void	set_frame(t_all *all, int set);
 void	set_grass(t_all *all);
 void	set_coin(t_all *all);
 void	set_s_wall(t_all *all);
 void	map(t_all *all, char **av);
-void	free_map(t_all *all);
 char	*ft_itoa(int n);
 size_t	ft_strlen(char *s);
 char	*ft_strchr(char *s, int c);
@@ -219,7 +216,6 @@ void	set_player(t_all *all, int x, int y);
 void	set_exit(t_all *all, int x, int y);
 int		can_move(t_all *all, char c);
 void	exit_e(t_all *all);
-void	move(t_all *all, char c);
 void	its_coin(t_all *all);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putchar_fd(char c, int fd);
@@ -227,8 +223,6 @@ void	ft_putstr_fd(char *s, int fd);
 void	get_out(t_all *all);
 void	get_out_s(t_all *all, char *s);
 void	check_map(t_all *all, t_map *m);
-void	free_codb(t_all *all);
-void	the_free(t_all *all);
 void	a_path(t_all *all);
 void	a_path_b(t_all *all);
 t_all	*init(char **av);
@@ -238,7 +232,7 @@ void	load_e1(t_all *all);
 void	load_e2(t_all *all);
 void	load_e3(t_all *all);
 void	set_ene(t_all *all);
-void	ehook(mlx_key_data_t k, void *gg);
+void	ehook(void *gg);
 int		can_move_e(t_all *all, char c);
 int		its_w_e(t_all *all, int x, int y);
 void	deloop(t_all *all);

@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 18:49:48 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/22 12:00:58 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/16 12:03:20 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	set_grass(t_all *all)
 
 	x = 0;
 	all->grass.gras1 = mlx_load_xpm42("./xpm/G.xpm42");
+	if (!all->grass.gras1)
+		get_out_s(all, "XPMMMM'S|\n");
 	all->grass.grass = mlx_texture_to_image(all->mlx, \
 	&all->grass.gras1->texture);
 	while (x < all->mpx * 69)
