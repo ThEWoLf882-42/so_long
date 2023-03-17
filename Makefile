@@ -2,8 +2,8 @@ NAME = so_long
 NAME_B = so_long_bonus
 
 CC = cc
-FLAGS = -Wall -Werror -Wextra -O3
-ARGS = -Iinclude -lglfw -L"/goinfre/agimi/.brew/Cellar/glfw/3.3.8/lib"
+FLAGS = -Wextra -Wall -Werror -Wunreachable-code -Ofast
+ARGS = -Iinclude -ldl -lglfw -pthread -lm -L"/goinfre/agimi/.brew/Cellar/glfw/3.3.8/lib"
 LIBRARIES = -L$(MLX42_DIRECTORY)
 INCLUDES = -I$(HEADERS_DIRECTORY) -I$(MLX42_HEADERS)
 
