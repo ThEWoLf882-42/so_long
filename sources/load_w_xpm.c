@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 18:02:24 by agimi             #+#    #+#             */
-/*   Updated: 2023/03/16 12:04:18 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/17 15:33:30 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	xpm(t_all *all)
 	if (!all->wall.ruc || !all->wall.luc || !all->wall.rdc || !all->wall.ldc
 		|| !all->wall.mu || !all->wall.mr || !all->wall.ml
 		|| !all->wall.md || !all->wall.w)
-		get_out_s(all, "XPMMMM'S|\n");
+		get_out_s(all, "XPMMMM'S\n");
 }
 
 void	load_w_xpm(t_all *all)

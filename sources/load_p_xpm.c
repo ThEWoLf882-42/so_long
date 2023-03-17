@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 18:01:49 by agimi             #+#    #+#             */
-/*   Updated: 2023/03/16 12:03:57 by agimi            ###   ########.fr       */
+/*   Updated: 2023/03/17 15:10:24 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	xpm(t_all *all)
 		|| !all->mv.up.u1 || !all->mv.up.u0 || !all->mv.up.u2
 		|| !all->mv.right.r1 ||!all->mv.right.r0 || !all->mv.right.r2
 		|| !all->mv.left.l1 || !all->mv.left.l0 || !all->mv.left.l2)
-		get_out_s(all, "XPMMMM'S|\n");
+		get_out_s(all, "XPMMMM'S\n");
 }
 
 void	load_p_xpm(t_all *all)
